@@ -12,11 +12,15 @@ public class Main {
     }
     public static void task2() {
         int second = 1000_000;
-        double minutes = second / 60D;
-        double hour = minutes / 60D;
-        double dau = hour / 24D;
-        System.out.println("В 1000.000 сек - " + dau + " дней");
-        System.out.println("               - " + hour + " часов");
-        System.out.println("               - " + minutes + " минут");
+
+        int Dau = second / (60 * 24 * 60);
+        int Hour = second % (60 * 24 * 60) / 3600;
+        int Min = (second % (60 * 24 * 60) % 3600) / 60;
+        int Sec = (second % (60 * 24 * 60) % 3600) % 60;;
+
+        System.out.println("В 1000.000 сек " + Dau + " дней");
+        System.out.println("               " + Hour + " часов");
+        System.out.println("               " + Min + " минут");
+        System.out.println("               " + Sec + " секунд");
     }
 }
